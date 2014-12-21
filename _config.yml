@@ -1,31 +1,32 @@
-baseurl: ""
-url: "http://ianks.com"
-title: "ianks"
+baseurl: ''
+url: 'http://ianks.com'
+title: 'ianks'
+port: 3000
 
 # This is used by feed.xml. Uncomment if you want to use it.
-# description: "..."
+# description: '...'
 
 gems:
   - jemoji
 exclude:
-  - "README.md"
-  - "CHANGELOG.md"
-  - "CNAME"
-  - "Gemfile"
-  - "Gemfile.lock"
+  - 'README.md'
+  - 'CHANGELOG.md'
+  - 'CNAME'
+  - 'Gemfile'
+  - 'Gemfile.lock'
 permalink: :title
 defaults:
   -
     scope:
-      path: ""
-      type: "pages"
+      path: ''
+      type: 'pages'
     values:
-      layout: "default"
+      layout: 'default'
   -
     scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+      layout: 'post'
 sass:
   style: compressed
