@@ -1,6 +1,3 @@
-// Add your own custom CSS here.
-@import "pygments-tomorrow";
-
 .post-content img,
 .post-excerpt-home img,
 .post-nav img {
@@ -20,3 +17,5 @@
 hr {
   margin: 0px;
 }
+
+@import "syntax";
