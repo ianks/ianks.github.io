@@ -1,11 +1,6 @@
-baseurl: ''
 url: 'http://ianks.com'
 title: 'ianks'
 port: 3000
-
-# This is used by feed.xml. Uncomment if you want to use it.
-# description: '...'
-
 gems:
   - jemoji
 exclude:
@@ -30,3 +25,4 @@ defaults:
       layout: 'post'
 sass:
   style: compressed
+markdown: redcarpet
