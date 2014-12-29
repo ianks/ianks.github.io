@@ -1,0 +1,44 @@
+.navbar-brand {
+  font-family: 'Oleo Script Swash Caps', $headings-font-family;
+  font-size: 40px;
+  font-weight: 100;
+  margin-right: 25px;
+}
+
+.navbar {
+  font-family: $headings-font-family;
+}
+
+.nav li a {
+  padding-top: 17.5px;
+}
+
+
+.navbar-static-top {
+  margin-bottom: $space-sm;
+}
+
+.social-media {
+  font-size: $font-size-small;
+}
+
+.links {
+  font-size: 20px;
+}
+
+@media(max-width: $screen-xs-max) {
+  .navbar-header {
+    text-align: center;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    float: none;
+  }
+
+  .navbar-toggle-wrapper {
+    position: absolute;
+    left: $navbar-padding-horizontal;
+    height: ($navbar-height + 34px) / 2;
+  }
+}

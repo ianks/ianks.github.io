@@ -34,27 +34,6 @@ h3 {
   margin-top: $space-md;
 }
 
-.navbar-brand {
-  font-family: 'Oleo Script Swash Caps', $headings-font-family;
-  font-size: 40px;
-  font-weight: 100;
-  margin-right: 25px;
-}
-.navbar {
-  font-family: $headings-font-family;
-}
-.navbar-static-top {
-  margin-bottom: $space-sm;
-}
-
-.social-media {
-  font-size: $font-size-small;
-}
-
-.links {
-  font-size: 20px;
-}
-
 .page-archive {
   margin-bottom: $space-md;
 }
@@ -63,21 +42,6 @@ h3 {
   margin: $space-sm 0 $space-sm;
   font-size: $font-size-small;
   color: $gray-light;
-}
-
-@media(max-width: $screen-xs-max) {
-  .navbar-header {
-    text-align: center;
-  }
-  .navbar-brand {
-    display: inline-block;
-    float: none;
-  }
-  .navbar-toggle-wrapper {
-    position: absolute;
-    left: $navbar-padding-horizontal;
-    height: ($navbar-height + 34px) / 2;
-  }
 }
 
 @import "custom-scss";
