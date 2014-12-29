@@ -1,5 +1,5 @@
 First and foremost, I am an equal-oppurtunity creator. There is nothing I enjoy
-more than watching *something* be born from *nothing*. If it involves the act of
+more than watching *something* come from *nothing*. If it involves the act of
 making, I've probably dabbled in it.
 
 I am passionate about [collaboratively building
@@ -9,10 +9,12 @@ I do hackathons. I have helped [host
 one](https://www.youtube.com/watch?v=FkK0PabP2to), and I have [won
 two](http://ianks.com/year-of-hackathons/).
 
-I love traveling around playing [my music](https://soundcloud.com/ionik) to
+I am a dog person.
+
+I love traveling around playing [my music](https://soundcloud.com/ionik) for
 people as an electronic musician.
 
-A group of friends and I built multi-media interactive installation using
+A group of friends and I built a multi-media interactive installation using
 3 Arduinos, one Raspberry Pi, and many lines of Javascript and Python.
 
 I am currently in the early stages of building the API for an [online experience
