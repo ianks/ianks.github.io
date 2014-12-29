@@ -19,7 +19,7 @@ I am currently in the early stages of building the API for an [online experience
 marketplace](https://github.com/tuxedio).
 
 I'm fascinated by Bitcoin, and have [given
-talks]({{"/assets/BitcoinPresentation.pdf" | prepend:site.baseurl}})
+talks](/assets/docs/BitcoinPresentation.pdf)
 about to creative uses of blockchain technology.
 
 I'm an avid VIM user. Check out my

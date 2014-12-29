@@ -57,7 +57,7 @@ hitch. That was lucky.
 After some deliberation, the judges awarded us a top 10 prize out of over 100
 teams! What an honor.
 
-![prize](/images/bitcoin-bookie-win.jpg)
+![prize](/assets/images/bitcoin-bookie-win.jpg)
 
 For the Coin-orado hackathon we build a web app which uses bitcoin wallets as a
 honeypot to incentivize hackers to reveal that your computer has been
