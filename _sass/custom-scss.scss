@@ -1,15 +1,3 @@
-.post-content img,
-.post-excerpt-home img,
-.post-nav img {
-  @extend .img-rounded;
-}
-.post-content table,
-.post-excerpt-home table,
-.post-nav table {
-  @extend .table;
-  @extend .table-bordered;
-}
-
 .nav li a {
   padding-top: 17.5px;
 }
@@ -18,4 +6,5 @@ hr {
   margin: 0px;
 }
 
+@import "post";
 @import "syntax";
