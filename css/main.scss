@@ -5,43 +5,8 @@
 @import "bootstrap-sass/bootstrap";
 @import "custom-variables";
 
-h2 {
-  margin-top: $space-md;
-  margin-bottom: $margin-bottom-header;
-}
-h3 {
-  text-transform: uppercase;
-  margin-bottom: $margin-bottom-header;
-}
-
-.lead {
-  @media (min-width: $screen-sm-min) {
-    font-size: $blockquote-font-size;
-  }
-}
-
-.btn {
-  font-family: $headings-font-family;
-}
-
-.section-header {
-  margin-top: 0;
-}
-.section-header-archive {
-  margin-top: 0;
-}
-.section-header-archive ~ .section-header-archive {
-  margin-top: $space-md;
-}
-
-.page-archive {
-  margin-bottom: $space-md;
-}
-
-.footer {
-  margin: $space-sm 0 $space-sm;
-  font-size: $font-size-small;
-  color: $gray-light;
-}
-
-@import "custom-scss";
+@import "post";
+@import "syntax";
+@import "nav";
+@import "footer";
+@import "misc";
