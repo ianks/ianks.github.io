@@ -1,3 +1,56 @@
+.post-header {
+  margin-bottom: $space-xs;
+}
+
+.post-title-home {
+  margin: 0;
+  a {
+    color: inherit;
+  }
+}
+
+.post-excerpt-home {
+  margin-bottom: $space-md;
+}
+
+.post-title-main {
+  margin: 0;
+}
+
+.post-title-archive {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  margin-right: 1em;
+}
+
+.post-content {
+  margin-bottom: $space-md;
+}
+
+.post-content img,
+.post-excerpt-home img,
+.post-nav img {
+  @extend .img-responsive;
+}
+
+.post-footer {
+  border-top: 1px solid $gray-lighter;
+  padding-top: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.post-navs {
+  margin-bottom: $space-md;
+}
+
+.post-nav {
+  margin-bottom: $space-sm;
+}
+
+.post-title-link {
+  margin-top: 0;
+}
+
 .post-content img,
 .post-excerpt-home img,
 .post-nav img {
