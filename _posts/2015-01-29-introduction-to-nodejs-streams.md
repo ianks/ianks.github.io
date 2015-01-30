@@ -5,7 +5,7 @@ tags: Node.js, Javascript, Unix, Pipes, Sockets, Streams, Data
 ---
 
 This is a light-hearted introduction to using Streams in Node.js. I will walk
-you though building a stream capable of piping your terminal output to a
+you through building a stream capable of piping your terminal output to a
 browser. It is meant to be fun, and hopefully you can learn a few things along
 the way.
 
