@@ -1,7 +1,7 @@
 First and foremost, I am an equal opportunity creator. There is nothing I enjoy
 more than watching something come from nothing. If it involves the act of
 making, I've probably given it a serious shot: coding, soldering, creating
-music, etc. This is an recurring, pervasive theme in my life. Eventually I
+music, etc. This is a recurring, pervasive theme in my life. Eventually I
 decided to embrace the mad scientist within. Happy ever after.
 
 I'm a social person. I'm fascinated by people's stories, and learning from
@@ -81,7 +81,7 @@ program under different schedulers.
 # Talks
 
 - I'm fascinated by Bitcoin, and have [given
-talks](/assets/docs/BitcoinPresentation.pdf) about to creative uses of
+talks](/assets/docs/BitcoinPresentation.pdf) about the creative uses of
 blockchain technology.
 
 > “Everyone you will ever meet knows something you don't.”
