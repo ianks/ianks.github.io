@@ -11,7 +11,7 @@ the way.
 
 Streams are a powerful abstraction in computing. They offer a way of easily
 directing the I/O of one process to another. By using multiple processes, you
-gain parallelism managed by the operating system's scheduler without having
+gain parallelism managed by the operating system's scheduler without having to
 worry about protecting shared memory. As a result, you can utilize multiple CPU
 cores quite easily.
 
@@ -45,8 +45,8 @@ Node.js offers an [API](http://nodejs.org/api/stream.html) for dealing with
 streams. I am going to go over a simple example of creating a stream which will
 allow us to pipe the output of a terminal (`STDOUT`) into the browser. What we
 need to create is a 'Writable' stream. The reason for this is that we are
-expecting to receive input from `STDIN`, meaning that we will be needing the
-input will need to be actually _written_ to our stream.
+expecting to receive input from `STDIN`, meaning that we'll need the
+input to actually be _written_ to our stream.
 
 The way to do this is to create a `Writable()` object and implement the
 `_write()` function. In doing so, we gain all of the behavior of the built-in
@@ -70,11 +70,11 @@ Now, instead of simply logging the output to the console, let's actually send
 the data to the browser. Sockets are very similar to pipes in the sense that
 they allow for interprocess-communication (IPC) by creating byte streams. The
 main difference is that sockets will turn the data into packets, and send the
-packets over the network, while pipes can just use shared files over the local
+packets over the network, while pipes can only use shared files over the local
 file-system.
 
 To do this, we will use [socket.io](http://socket.io) to set up a socket between
-out Node app and the client.
+our Node app and the client.
 
 #### On the server we now have this:
 
@@ -130,11 +130,11 @@ process.stdin.pipe(process.stdout);
 </html>
 ```
 
-Now we can reap the fruits of our labor. In your terminal, run these commands:
-1. `npm install -g socket.io express`
-2. Open `index.html` in a browser, and open up Developer Tools in the browser
+Now we can reap the fruits of our labor. In your terminal, run these commands:  
+1. `npm install -g socket.io express`  
+2. Open `index.html` in a browser, and open up Developer Tools in the browser  
 3. Now, we can pipe all of our bash output to the browser:
-  - `bash | node server.js`
+  - `bash | node server.js`  
 
 All of your `STDOUT` should now be showing up in your browser console. For a
 more complete example, have a look at the one I made. It's essentially the same,
@@ -145,7 +145,7 @@ terminal-like.](https://github.com/sikuli/domout/tree/ianks/examples/console)
 
 Although this example is a bit contrived, there are better uses for this type of
 concept. For example, you can create a simple command line tool which pipes in
-JSON, and the filters it however you see fit. Pipelines simple, parallel, and
+JSON, and then filters it however you see fit. Pipelines are a simple, parallel, and
 robust mechanism for manipulating data.
 
 ## More Resources
