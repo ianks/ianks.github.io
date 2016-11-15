@@ -25,3 +25,4 @@ defaults:
       layout: 'post'
 sass:
   style: compressed
+highlighter: rouge
