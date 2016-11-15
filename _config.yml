@@ -25,5 +25,4 @@ defaults:
       layout: 'post'
 sass:
   style: compressed
-markdown: redcarpet
 highlighter: pygments
