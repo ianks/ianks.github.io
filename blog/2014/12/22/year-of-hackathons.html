@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Blog Title - 2014: Year of Hackathons</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    <link href="/stylesheets/styles.css" rel="stylesheet" />
+    <script src="/javascripts/application.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-full bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 container-sm mx-auto flex flex-col">
+
+    <div class="p-5 text-white dark:text-gray-800 bg-gray-600 dark:bg-gray-300 justify-self-start">
+      <nav class="flex-row md:justify-between">
+          <div class="nav-logo flex flex-row justify-between text-2xl">
+            <a href="#"><i>ianks</i></a>
+          </div>
+      </nav>
+    </div>
+
+    <div id="main" role="main" class="flex-grow px-3">
+      <p>This year I attended two hackathons. The first one was the <a href="http://www.money2020.com/money2020-hackathon">Money 20/20
+hackathon</a> and the second was the
+<a href="https://www.youtube.com/watch?v=FkK0PabP2to">Coin-orado hackathon</a>.</p>
+
+<blockquote>
+  <p>The Money20/20 Hackathon brings together hundreds of talented developers,
+designers and entrepreneurs to compete over 24 hours by building amazing
+FinTech applications using APIs, SDKs and other tools from todays biggest
+innovators in Payments and Financial ServicesA</p>
+</blockquote>
+
+<p>A hackathon is a short 1-3 day event where people gather in groups and attempt to
+build a bare-minimum product idea. At the end of the event, the groups 'pitch'
+their idea to a panel of judges.</p>
+
+<p>I met up with a few friends in Vegas for the event with no concrete plans in
+mind, only ideas. The only thing I <em>knew</em> that I wanted to do was something
+involving <a href="https://bitcoin.org/en/">Bitcoin</a>. In my opinion, Bitcoin is the
+single most interesting developing technology at the moment, and has huge
+potential in the world of financial services and contracts. So this was a given.</p>
+
+<p>We spent the first 3-4 hours harvesting an idea to leverage bitcoin's
+multi-signature wallet functionality to create an escrow service. Our escrow
+service was marketed as a friendly bookie which would escrow money when you make
+a bet with a friend. However, due to multi-signature bitcoin addresses, it was
+<em>impossible</em> for the bookie to steal your money! We call our service Bitcoin
+Bookie.</p>
+
+<p>The process goes something like this, with many details being left out for the
+sake of explanation:</p>
+
+<ol>
+  <li>Alice and Bob wish to make a friendly wager on a game.</li>
+  <li>Alice and Bob send their <em>public</em> keys to our service.</li>
+  <li>We take Alice, Bob, and our (Bitcoin Bookie) public addresses, and create
+  a shared wallet. This shared wallet contains a script that states that in
+  order for money to be spent out of this wallet, 2-of-3 people must <em>sign</em> off
+  on the transaction.</li>
+  <li>Alice and Bob both create half-complete transactions to send the bitcoin
+  to themselves. The reason I call them half-complete is because without one
+  more person signing off on the transaction, the bitcoin will never actually
+  be sent.</li>
+  <li>Bitcoin Bookie then waits for the game to complete, and then completes the
+  2-of-3 transaction which sends the bitcoin to the rightful winner.</li>
+</ol>
+
+<p>We managed to complete a working demo for this application using a combination
+of Ruby on Rails and client-side javascript.</p>
+
+<p>After 24 hours of blood, sweat and caffeine, we managed to make it to the final
+pitching round. They called our name, and with no sleep we had to pitch our idea
+to a panel of renowned figures in the financial industry and hundreds of peers.
+It was a bit intimidating, but the rush of it all kept me from feeling anxious
+about presenting. We pitched our idea, and even pulled off a live-demo without a
+hitch. That was lucky.</p>
+
+<p>After some deliberation, the judges awarded us a top 10 prize out of over 100
+teams! What an honor.</p>
+
+<p><img src="/assets/images/bitcoin-bookie-win.jpg" alt="prize" /></p>
+
+<p>For the Coin-orado hackathon we build a web app which uses bitcoin wallets as a
+honeypot to incentivize hackers to reveal that your computer has been
+compromised. Essentially, we load your computer with some small bitcoin wallets
+and wait for someone to spenf the money. <a href="https://www.youtube.com/watch?v=CHumoxDITwA">Here is a video of our
+pitch</a>.</p>
+
+<p>The interesting thing about hackathons is that they give you an excuse to put
+all real-world responsibilities on hold. This gives you the opportunity to give
+ideas the hyper-focus necessary to bring them from mere thoughts into fruition.</p>
+
+<p>There are some inherent problems with hackathons I think. Firstly, they
+encourage you to ignore best practices due to time constraints. No one I have
+met is writing tests or heavily focusing on code architecture and readability in
+hackathons. It would be too unproductive. Hackathon culture can also be somewhat
+taxing physically. Staying up all night and drinking coffee causes a… unique
+style of hangover.</p>
+
+<p>That being said, I think the good far outweighs the bad. For all the bad design
+decisions you make along the way, you spend invaluable time collaborating and
+hashing out useful product ideas.</p>
+
+<p>I learned it is important to always remember that the goal of a hackathon is not
+to walk away with a production ready product, but to be able to effectively
+communicate and present your idea to a panel. Having a working demo can be very
+useful for this, but it's not the most important part.</p>
+
+<p>I would like to make a special shoutout to <a href="https://chain.com">Chain.com</a> for
+their help throughout both hackathons. They make developing bitcoin applications
+exponentially simpler and effective. They flew out employees to both
+hackathons who got down and dirty helping people use their API. On top of that,
+they have <em>incredible</em> documentation for their API, which is the most important
+aspect of an API.</p>
+
+    </div>
+
+    <div class="justify-self-end px-3">
+      <hr />
+
+      <aside class="md:flex w-full">
+        <div class="md:flex-1 md:flex md:flex-col items-center">
+          <h2>Recent Articles</h2>
+
+          <ol>
+              <li><a href="/blog/2021/02/11/the-internet-irl.html">The Internet IRL</a> <span>Feb 11</span></li>
+              <li><a href="/blog/2015/01/29/introduction-to-nodejs-streams.html">Introduction to Node.js Streams</a> <span>Jan 29</span></li>
+              <li><a href="/blog/2015/01/07/style-checking-in-vim-using-syntastic.html">Style Checking in VIM using Syntastic</a> <span>Jan  7</span></li>
+              <li><a href="/blog/2014/12/22/year-of-hackathons.html">2014: Year of Hackathons</a> <span>Dec 22</span></li>
+              <li><a href="/blog/2014/12/20/an-invitation.html">An Invitation</a> <span>Dec 20</span></li>
+              <li><a href="/blog/2014/01/06/github-cleaning.html">Quick and Dirty Github Cleaning</a> <span>Jan  6</span></li>
+              <li><a href="/blog/2014/01/03/octodown.html">Meet Octodown</a> <span>Jan  3</span></li>
+          </ol>
+        </div>
+
+        <div class="md:flex-1 md:flex flex-col items-center">
+          <h2>Tags</h2>
+
+          <ol>
+              <li><a href="/blog/tags/node-js.html">Node.js (1)</a></li>
+              <li><a href="/blog/tags/javascript.html">Javascript (1)</a></li>
+              <li><a href="/blog/tags/unix.html">Unix (1)</a></li>
+              <li><a href="/blog/tags/pipes.html">Pipes (1)</a></li>
+              <li><a href="/blog/tags/sockets.html">Sockets (1)</a></li>
+              <li><a href="/blog/tags/streams.html">Streams (1)</a></li>
+              <li><a href="/blog/tags/data.html">Data (1)</a></li>
+              <li><a href="/blog/tags/vim.html">VIM (1)</a></li>
+              <li><a href="/blog/tags/quick.html">quick (1)</a></li>
+              <li><a href="/blog/tags/tutorial.html">tutorial (2)</a></li>
+              <li><a href="/blog/tags/ruby.html">Ruby (2)</a></li>
+              <li><a href="/blog/tags/github.html">Github (2)</a></li>
+              <li><a href="/blog/tags/gem.html">Gem (1)</a></li>
+              <li><a href="/blog/tags/markdown.html">Markdown (1)</a></li>
+              <li><a href="/blog/tags/terminal.html">Terminal (1)</a></li>
+          </ol>
+        </div>
+
+        <div class="md:flex-1 md:flex flex-col items-center">
+          <h2>By Year</h2>
+
+          <ol>
+              <li><a href="/blog/2021.html">2021 (1)</a></li>
+              <li><a href="/blog/2015.html">2015 (2)</a></li>
+              <li><a href="/blog/2014.html">2014 (4)</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

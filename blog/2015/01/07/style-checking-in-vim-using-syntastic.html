@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Blog Title</title>
+    <title>Blog Title - Style Checking in VIM using Syntastic</title>
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
     <link href="/stylesheets/styles.css" rel="stylesheet" />
     <script src="/javascripts/application.js"></script>
@@ -25,80 +25,68 @@
     </div>
 
     <div id="main" role="main" class="flex-grow px-3">
-      
-  <div class="p-5">
-    <h2><a href="/blog/2021/02/11/the-internet-irl.html">The Internet IRL</a> (<span>Feb 11</span>)</h2>
-    <h1 id="the-internet-irl">The Internet IRL</h1>
-
-<p>The year is 1988, and you are suddenly dropped into a strange new world. You
-recognize parts of it, but it feels foreign - cold, accelerated, maybe creepy.</p>
-
-<p>What you do not know is that you have been dropped into <strong>The Internet IRL</strong></p>
-    <a href="/blog/2021/02/11/the-internet-irl.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2015/01/29/introduction-to-nodejs-streams.html">Introduction to Node.js Streams</a> (<span>Jan 29</span>)</h2>
-    <p>This is a light-hearted introduction to using Streams in Node.js. I will walk
-you through building a stream capable of piping your terminal output to a
-browser. It is meant to be fun, and hopefully you can learn a few things along
-the way.</p>
-
-<p>Streams...</p>
-    <a href="/blog/2015/01/29/introduction-to-nodejs-streams.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2015/01/07/style-checking-in-vim-using-syntastic.html">Style Checking in VIM using Syntastic</a> (<span>Jan  7</span>)</h2>
-    <p>I'm a big fan of having a consistent style in my code. It greatly increases the
+      <p>I'm a big fan of having a consistent style in my code. It greatly increases the
 readability of the code, thereby reducing mental compilation time. By reducing
 mental compilation time we are actually increasing developer efficiency.</p>
 
-<p>Maintaining a consistent...</p>
-    <a href="/blog/2015/01/07/style-checking-in-vim-using-syntastic.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2014/12/22/year-of-hackathons.html">2014: Year of Hackathons</a> (<span>Dec 22</span>)</h2>
-    <p>This year I attended two hackathons. The first one was the <a href="http://www.money2020.com/money2020-hackathon">Money 20/20
-hackathon</a> and the second was the
-<a href="https://www.youtube.com/watch?v=FkK0PabP2to">Coin-orado hackathon</a>.</p>
+<p>Maintaining a consistent style without the help of a syntax-checker/style-linter
+can be tedious, and draws your focus away from the code. You begin to think
+about things like: "What is the proper style for this? Will this actually
+compile?" You may end up Googling for an answer or attempt to run your code
+manually. Both of these I consider to be unneccesary context switches, as they
+disturb your focus on the <em>actual</em> code.</p>
 
-<blockquote>
-  <p>The Money20/20 Hackathon brings together hundreds of talented developers,
-designers and entrepreneurs to compete over...</p>
-</blockquote>
-    <a href="/blog/2014/12/22/year-of-hackathons.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2014/12/20/an-invitation.html">An Invitation</a> (<span>Dec 20</span>)</h2>
-    <p>Writing is funny; you slowly discover how little you know of what can be known.
-And of all that you do know, it never sounds quite right when jumping off the
-tongue. What is clear in one's head is never easy to relay to a piece of paper.
-Regardless...</p>
-    <a href="/blog/2014/12/20/an-invitation.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2014/01/06/github-cleaning.html">Quick and Dirty Github Cleaning</a> (<span>Jan  6</span>)</h2>
-    <p>This semester I took a class that required us to fork a repo every week and make
-a pull-request to turn in our assignments. Needless to say, my Github account
-got pretty cluttered. Here's a quick and dirty way to clean out old repositories
-you do not...</p>
-    <a href="/blog/2014/01/06/github-cleaning.html">read more...</a>
-  </div>
-  <div class="p-5">
-    <h2><a href="/blog/2014/01/03/octodown.html">Meet Octodown</a> (<span>Jan  3</span>)</h2>
-    <p>Ever wanted to easily preview what you markdown would look like <em>exactly</em> on
-Github? Ever wanted to do that from inside of a Terminal? Well this Gem is for
-you. Dead simple. Never get caught writing ugly markdown again.</p>
+<p>Enter <a href="https://github.com/scrooloose/syntastic">Syntastic</a>.</p>
 
-<p><img src="https://raw.githubusercontent.com/ianks/octodown/master/assets/octodown.gif" alt="Octodown"></p>
+<p>Syntastic will automatically check your code as you are writing it. It is a
+feature found in most IDEs, but does not come with Vanilla VIM. Sadly, I see
+many new VIMmers who are unaware this even exists!</p>
 
-<h2 id="features">Features:</h2>
+<h2 id="installation">Installation</h2>
 
-<ul>
-  <li>Uses the same...</li>
-</ul>
-    <a href="/blog/2014/01/03/octodown.html">read more...</a>
-  </div>
+<ol>
+  <li>Toss this in your ~/.vimrc:</li>
+</ol>
 
+<p>```vim
+  " Install the plugin (if you are using Vundle)
+  Plugin 'scrooloose/syntastic'</p>
+
+<p>" Mark syntax errors with :signs
+  let g:syntastic_enable_signs=1</p>
+
+<p>" Do not automatically jump to the error when saving the file
+  " Jump feature is annoying to me as it automatically moves the cursor
+  let g:syntastic_auto_jump=0</p>
+
+<p>" Show the error list automatically
+  " Allows you to easily navigate the quick fix list
+  let g:syntastic_auto_loc_list=1</p>
+
+<p>" This is where the magic happens. Chain together different style checkers
+  " in order to check for both style flaws and syntax errors.
+  " Syntax checkers: https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+  let g:syntastic_ruby_checkers=['rubocop', 'mri']
+  let g:syntastic_python_checkers=['pep8', 'pylint', 'python']
+  let g:syntastic_javascript_checkers=['jshint']
+  let g:syntastic_scala_checkers=['scalac', 'scalastyle']
+  ```</p>
+
+<ol>
+  <li>Now, in order to use some of these style checkers, you need to install the
+packages to make them work. Given my ~/.vimrc, I would run this command:</li>
+</ol>
+
+<p><code>bash
+  $ gem install rubocop
+  $ pip install pylint pep8
+  $ npm install -g jshint
+  $ brew install scalastyle
+ </code></p>
+
+<p>You are ready to go. I will leave it as an exercise to the reader to configure
+their style linters to enforce the style they prefer. I have a few set already
+in my <a href="https://github.com/ianks/yadr-alt">Dotfiles</a> if you are interested.</p>
 
     </div>
 

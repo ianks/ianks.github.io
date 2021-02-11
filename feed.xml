@@ -1,30 +1,445 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
-      </item>
-    {% endfor %}
-  </channel>
-</rss>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/blog</id>
+  <link href="http://blog.url.com/blog"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2021-02-11T16:14:00+00:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>The Internet IRL</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2021/02/11/the-internet-irl.html"/>
+    <id>http://blog.url.com/blog/2021/02/11/the-internet-irl.html</id>
+    <published>2021-02-11T16:14:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1 id="the-internet-irl"&gt;The Internet IRL&lt;/h1&gt;
+
+&lt;p&gt;The year is 1988, and you are suddenly dropped into a strange new world. You
+recognize parts of it, but it feels foreign - cold, accelerated, maybe creepy.&lt;/p&gt;
+
+&lt;p&gt;What you do not know is that you have been dropped into &lt;strong&gt;The Internet IRL&lt;/strong&gt;,
+and the year is 2021.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Facebook Wedding&lt;/strong&gt; – It's your big day! You're getting married. Friends,
+family, people you met once at a coffee shop, your crazed alt-right uncle, the
+girl you went on one date with - they're all enjoying cocktails. Many are
+arguing, most are watching them on the sideline with a confused stare.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Instagram House Party&lt;/strong&gt; – There's a huge house party tonight. George Michael
+is making a guest appearance, Guns 'n Roses will be raging, and hell, Rick
+Astley might even show up. Unfortunately, you weren't invited and will probably
+stay home tonight. Luckily for you, everyone is going to mail you a postcard,
+and pictures documenting everything you missed out on. So, in a weird way, it
+was almost like you were there, right?&lt;/p&gt;
+
+&lt;p&gt;Personally, I'm not a big fan of &lt;strong&gt;The Internet IRL&lt;/strong&gt;. It trades &lt;em&gt;authenticity&lt;/em&gt;
+for &lt;em&gt;shock value&lt;/em&gt;, and &lt;em&gt;relationships&lt;/em&gt; for &lt;em&gt;interactions&lt;/em&gt;. And unfortunately,
+there's not real opt-out button for this reality for lovers of the internet.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, the ability to freely share a blog post on the internet is the
+greatest achievement of the internet. And given that I want a place online
+where I could be more authentic, and meet some like-minded folks…&lt;/p&gt;
+
+&lt;p&gt;Here's my blahg.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Introduction to Node.js Streams</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/01/29/introduction-to-nodejs-streams.html"/>
+    <id>http://blog.url.com/blog/2015/01/29/introduction-to-nodejs-streams.html</id>
+    <published>2015-01-29T00:00:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a light-hearted introduction to using Streams in Node.js. I will walk
+you through building a stream capable of piping your terminal output to a
+browser. It is meant to be fun, and hopefully you can learn a few things along
+the way.&lt;/p&gt;
+
+&lt;p&gt;Streams are a powerful abstraction in computing. They offer a way of easily
+directing the I/O of one process to another. By using multiple processes, you
+gain parallelism managed by the operating system's scheduler without having to
+worry about protecting shared memory. As a result, you can utilize multiple CPU
+cores quite easily.&lt;/p&gt;
+
+&lt;h2 id="example-of-using-pipes"&gt;Example of using pipes&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Feel free to skip this section if you are comfortable with the underlying
+mechanism of Unix pipes&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;One common example of a stream is piping the output (&lt;code&gt;STDOUT&lt;/code&gt;) of one process
+into the input (&lt;code&gt;STDIN&lt;/code&gt;) of another:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+$ while sleep 1; do echo 'Hi world!'; done | sed s/Hi/Hello/g
+#=&amp;gt; Hello world!
+#=&amp;gt; Hello world!
+#=&amp;gt; Hello world!
+...
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can think of this as a stream of data coming from the left side of the pipe
+( | ) to the right side. The way this works under the hood in Linux is the
+&lt;code&gt;pipe&lt;/code&gt; system call. A 'pseudofile' is created, and file descriptors are returned
+for both writing to and reading from said 'pseudofile.' In the above example,
+&lt;code&gt;echo&lt;/code&gt; writes to the shared file, and &lt;code&gt;sed&lt;/code&gt; reads from it. The beauty of this
+setup is that &lt;code&gt;sed&lt;/code&gt; is not blocking &lt;code&gt;echo&lt;/code&gt;, and this mechanism becomes a simple
+method for parallel processing of data.&lt;/p&gt;
+
+&lt;h2 id="creating-a-stream-in-nodejs"&gt;Creating a stream in Node.js&lt;/h2&gt;
+
+&lt;p&gt;Node.js offers an &lt;a href="http://nodejs.org/api/stream.html"&gt;API&lt;/a&gt; for dealing with
+streams. I am going to go over a simple example of creating a stream which will
+allow us to pipe the output of a terminal (&lt;code&gt;STDOUT&lt;/code&gt;) into the browser. What we
+need to create is a 'Writable' stream. The reason for this is that we are
+expecting to receive input from &lt;code&gt;STDIN&lt;/code&gt;, meaning that we'll need the
+input to actually be &lt;em&gt;written&lt;/em&gt; to our stream.&lt;/p&gt;
+
+&lt;p&gt;The way to do this is to create a &lt;code&gt;Writable()&lt;/code&gt; object and implement the
+&lt;code&gt;_write()&lt;/code&gt; function. In doing so, we gain all of the behavior of the built-in
+streams in Node.js, such as as &lt;code&gt;process.stdout&lt;/code&gt;, with our own custom write
+behavior.&lt;/p&gt;
+
+&lt;p&gt;```javascript
+var Writable = require("stream").Writable;
+var BrowserStream = new Writable();&lt;/p&gt;
+
+&lt;p&gt;BrowserStream._write = function(chunk, enc, next) {
+  // This just logs the output to our console for now, we change this later.
+  console.log(chunk.toString(enc || 'utf8'));
+  next();
+};
+```&lt;/p&gt;
+
+&lt;h2 id="piping-stdout-to-a-browser"&gt;Piping STDOUT to a browser&lt;/h2&gt;
+
+&lt;p&gt;Now, instead of simply logging the output to the console, let's actually send
+the data to the browser. Sockets are very similar to pipes in the sense that
+they allow for interprocess-communication (IPC) by creating byte streams. The
+main difference is that sockets will turn the data into packets, and send the
+packets over the network, while pipes can only use shared files over the local
+file-system.&lt;/p&gt;
+
+&lt;p&gt;To do this, we will use &lt;a href="http://socket.io"&gt;socket.io&lt;/a&gt; to set up a socket between
+our Node app and the client.&lt;/p&gt;
+
+&lt;h4 id="on-the-server-we-now-have-this"&gt;On the server we now have this:&lt;/h4&gt;
+
+&lt;p&gt;```javascript
+// server.js&lt;/p&gt;
+
+&lt;p&gt;"use strict";&lt;/p&gt;
+
+&lt;p&gt;var app = require("express")();
+var server = require("http").Server(app);
+var io = require("socket.io")(server);
+var Writable = require("stream").Writable;
+var BrowserStream = new Writable();&lt;/p&gt;
+
+&lt;p&gt;// Create a server for the client to connect to
+server.listen(7777);&lt;/p&gt;
+
+&lt;p&gt;BrowserStream._write = function(chunk, enc, next) {
+  var string = chunk.toString("utf8");&lt;/p&gt;
+
+&lt;p&gt;// Instead of logging to the console, write the data to a socket
+  io.sockets.emit("news", string);
+  next();
+};&lt;/p&gt;
+
+&lt;p&gt;// We now can pipe stdin into BrowserStream
+process.stdin.pipe(BrowserStream);&lt;/p&gt;
+
+&lt;p&gt;// We also pipe stdin to stdout so we can see it in the terminal
+process.stdin.pipe(process.stdout);
+```&lt;/p&gt;
+
+&lt;h4 id="on-the-client-side-we-have-this"&gt;On the client side, we have this:&lt;/h4&gt;
+
+&lt;p&gt;```html
+&lt;!-- index.html --&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/p&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;script src="https://cdn.socket.io/socket.io-1.3.2.js"&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+      var socket = io.connect("http://localhost:7777");
+
+      socket.on("news", function(data) {
+        console.log(data);
+      });
+    &lt;/script&gt;
+
+  &lt;/head&gt;
+&lt;/html&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Now we can reap the fruits of our labor. In your terminal, run these commands:&lt;br /&gt;
+1. &lt;code&gt;npm install -g socket.io express&lt;/code&gt;&lt;br /&gt;
+2. Open &lt;code&gt;index.html&lt;/code&gt; in a browser, and open up Developer Tools in the browser&lt;br /&gt;
+3. Now, we can pipe all of our bash output to the browser:
+  - &lt;code&gt;bash | node server.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;All of your &lt;code&gt;STDOUT&lt;/code&gt; should now be showing up in your browser console. For a
+more complete example, have a look at the one I made. It's essentially the same,
+&lt;a href="https://github.com/sikuli/domout/tree/ianks/examples/console"&gt;but it styles all of the output to make it look more
+terminal-like.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Although this example is a bit contrived, there are better uses for this type of
+concept. For example, you can create a simple command line tool which pipes in
+JSON, and then filters it however you see fit. Pipelines are a simple, parallel, and
+robust mechanism for manipulating data.&lt;/p&gt;
+
+&lt;h2 id="more-resources"&gt;More Resources&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href="https://github.com/substack/stream-handbook"&gt;Stream Handbook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://nodejs.org/api/stream.html"&gt;Stream API&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Style Checking in VIM using Syntastic</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2015/01/07/style-checking-in-vim-using-syntastic.html"/>
+    <id>http://blog.url.com/blog/2015/01/07/style-checking-in-vim-using-syntastic.html</id>
+    <published>2015-01-07T00:00:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I'm a big fan of having a consistent style in my code. It greatly increases the
+readability of the code, thereby reducing mental compilation time. By reducing
+mental compilation time we are actually increasing developer efficiency.&lt;/p&gt;
+
+&lt;p&gt;Maintaining a consistent style without the help of a syntax-checker/style-linter
+can be tedious, and draws your focus away from the code. You begin to think
+about things like: "What is the proper style for this? Will this actually
+compile?" You may end up Googling for an answer or attempt to run your code
+manually. Both of these I consider to be unneccesary context switches, as they
+disturb your focus on the &lt;em&gt;actual&lt;/em&gt; code.&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href="https://github.com/scrooloose/syntastic"&gt;Syntastic&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Syntastic will automatically check your code as you are writing it. It is a
+feature found in most IDEs, but does not come with Vanilla VIM. Sadly, I see
+many new VIMmers who are unaware this even exists!&lt;/p&gt;
+
+&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Toss this in your ~/.vimrc:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```vim
+  " Install the plugin (if you are using Vundle)
+  Plugin 'scrooloose/syntastic'&lt;/p&gt;
+
+&lt;p&gt;" Mark syntax errors with :signs
+  let g:syntastic_enable_signs=1&lt;/p&gt;
+
+&lt;p&gt;" Do not automatically jump to the error when saving the file
+  " Jump feature is annoying to me as it automatically moves the cursor
+  let g:syntastic_auto_jump=0&lt;/p&gt;
+
+&lt;p&gt;" Show the error list automatically
+  " Allows you to easily navigate the quick fix list
+  let g:syntastic_auto_loc_list=1&lt;/p&gt;
+
+&lt;p&gt;" This is where the magic happens. Chain together different style checkers
+  " in order to check for both style flaws and syntax errors.
+  " Syntax checkers: https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers
+  let g:syntastic_ruby_checkers=['rubocop', 'mri']
+  let g:syntastic_python_checkers=['pep8', 'pylint', 'python']
+  let g:syntastic_javascript_checkers=['jshint']
+  let g:syntastic_scala_checkers=['scalac', 'scalastyle']
+  ```&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Now, in order to use some of these style checkers, you need to install the
+packages to make them work. Given my ~/.vimrc, I would run this command:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+  $ gem install rubocop
+  $ pip install pylint pep8
+  $ npm install -g jshint
+  $ brew install scalastyle
+ &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You are ready to go. I will leave it as an exercise to the reader to configure
+their style linters to enforce the style they prefer. I have a few set already
+in my &lt;a href="https://github.com/ianks/yadr-alt"&gt;Dotfiles&lt;/a&gt; if you are interested.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>2014: Year of Hackathons</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/12/22/year-of-hackathons.html"/>
+    <id>http://blog.url.com/blog/2014/12/22/year-of-hackathons.html</id>
+    <published>2014-12-22T00:00:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This year I attended two hackathons. The first one was the &lt;a href="http://www.money2020.com/money2020-hackathon"&gt;Money 20/20
+hackathon&lt;/a&gt; and the second was the
+&lt;a href="https://www.youtube.com/watch?v=FkK0PabP2to"&gt;Coin-orado hackathon&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Money20/20 Hackathon brings together hundreds of talented developers,
+designers and entrepreneurs to compete over 24 hours by building amazing
+FinTech applications using APIs, SDKs and other tools from todays biggest
+innovators in Payments and Financial ServicesA&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A hackathon is a short 1-3 day event where people gather in groups and attempt to
+build a bare-minimum product idea. At the end of the event, the groups 'pitch'
+their idea to a panel of judges.&lt;/p&gt;
+
+&lt;p&gt;I met up with a few friends in Vegas for the event with no concrete plans in
+mind, only ideas. The only thing I &lt;em&gt;knew&lt;/em&gt; that I wanted to do was something
+involving &lt;a href="https://bitcoin.org/en/"&gt;Bitcoin&lt;/a&gt;. In my opinion, Bitcoin is the
+single most interesting developing technology at the moment, and has huge
+potential in the world of financial services and contracts. So this was a given.&lt;/p&gt;
+
+&lt;p&gt;We spent the first 3-4 hours harvesting an idea to leverage bitcoin's
+multi-signature wallet functionality to create an escrow service. Our escrow
+service was marketed as a friendly bookie which would escrow money when you make
+a bet with a friend. However, due to multi-signature bitcoin addresses, it was
+&lt;em&gt;impossible&lt;/em&gt; for the bookie to steal your money! We call our service Bitcoin
+Bookie.&lt;/p&gt;
+
+&lt;p&gt;The process goes something like this, with many details being left out for the
+sake of explanation:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Alice and Bob wish to make a friendly wager on a game.&lt;/li&gt;
+  &lt;li&gt;Alice and Bob send their &lt;em&gt;public&lt;/em&gt; keys to our service.&lt;/li&gt;
+  &lt;li&gt;We take Alice, Bob, and our (Bitcoin Bookie) public addresses, and create
+  a shared wallet. This shared wallet contains a script that states that in
+  order for money to be spent out of this wallet, 2-of-3 people must &lt;em&gt;sign&lt;/em&gt; off
+  on the transaction.&lt;/li&gt;
+  &lt;li&gt;Alice and Bob both create half-complete transactions to send the bitcoin
+  to themselves. The reason I call them half-complete is because without one
+  more person signing off on the transaction, the bitcoin will never actually
+  be sent.&lt;/li&gt;
+  &lt;li&gt;Bitcoin Bookie then waits for the game to complete, and then completes the
+  2-of-3 transaction which sends the bitcoin to the rightful winner.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We managed to complete a working demo for this application using a combination
+of Ruby on Rails and client-side javascript.&lt;/p&gt;
+
+&lt;p&gt;After 24 hours of blood, sweat and caffeine, we managed to make it to the final
+pitching round. They called our name, and with no sleep we had to pitch our idea
+to a panel of renowned figures in the financial industry and hundreds of peers.
+It was a bit intimidating, but the rush of it all kept me from feeling anxious
+about presenting. We pitched our idea, and even pulled off a live-demo without a
+hitch. That was lucky.&lt;/p&gt;
+
+&lt;p&gt;After some deliberation, the judges awarded us a top 10 prize out of over 100
+teams! What an honor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/images/bitcoin-bookie-win.jpg" alt="prize" /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the Coin-orado hackathon we build a web app which uses bitcoin wallets as a
+honeypot to incentivize hackers to reveal that your computer has been
+compromised. Essentially, we load your computer with some small bitcoin wallets
+and wait for someone to spenf the money. &lt;a href="https://www.youtube.com/watch?v=CHumoxDITwA"&gt;Here is a video of our
+pitch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The interesting thing about hackathons is that they give you an excuse to put
+all real-world responsibilities on hold. This gives you the opportunity to give
+ideas the hyper-focus necessary to bring them from mere thoughts into fruition.&lt;/p&gt;
+
+&lt;p&gt;There are some inherent problems with hackathons I think. Firstly, they
+encourage you to ignore best practices due to time constraints. No one I have
+met is writing tests or heavily focusing on code architecture and readability in
+hackathons. It would be too unproductive. Hackathon culture can also be somewhat
+taxing physically. Staying up all night and drinking coffee causes a… unique
+style of hangover.&lt;/p&gt;
+
+&lt;p&gt;That being said, I think the good far outweighs the bad. For all the bad design
+decisions you make along the way, you spend invaluable time collaborating and
+hashing out useful product ideas.&lt;/p&gt;
+
+&lt;p&gt;I learned it is important to always remember that the goal of a hackathon is not
+to walk away with a production ready product, but to be able to effectively
+communicate and present your idea to a panel. Having a working demo can be very
+useful for this, but it's not the most important part.&lt;/p&gt;
+
+&lt;p&gt;I would like to make a special shoutout to &lt;a href="https://chain.com"&gt;Chain.com&lt;/a&gt; for
+their help throughout both hackathons. They make developing bitcoin applications
+exponentially simpler and effective. They flew out employees to both
+hackathons who got down and dirty helping people use their API. On top of that,
+they have &lt;em&gt;incredible&lt;/em&gt; documentation for their API, which is the most important
+aspect of an API.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>An Invitation</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/12/20/an-invitation.html"/>
+    <id>http://blog.url.com/blog/2014/12/20/an-invitation.html</id>
+    <published>2014-12-20T00:00:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Writing is funny; you slowly discover how little you know of what can be known.
+And of all that you do know, it never sounds quite right when jumping off the
+tongue. What is clear in one's head is never easy to relay to a piece of paper.
+Regardless, here's my attempt.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Quick and Dirty Github Cleaning</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/01/06/github-cleaning.html"/>
+    <id>http://blog.url.com/blog/2014/01/06/github-cleaning.html</id>
+    <published>2014-01-06T00:00:00+00:00</published>
+    <updated>2021-02-11T20:26:06+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This semester I took a class that required us to fork a repo every week and make
+a pull-request to turn in our assignments. Needless to say, my Github account
+got pretty cluttered. Here's a quick and dirty way to clean out old repositories
+you do not need.&lt;/p&gt;
+
+&lt;p&gt;First, you need to install the Github-API gem:
+&lt;code&gt;$ gem install github_api&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, add your code, and regex match whichever repos you want to remove. Or
+simply add some conditional logic to manually catch them if they don't follow a
+pattern.&lt;/p&gt;
+
+&lt;p&gt;```ruby
+require 'github_api'&lt;/p&gt;
+
+&lt;p&gt;username = 'YOUR_USERNAME'
+password = 'YOUR_PASSWORD'
+github = Github.new basic_auth: "#{username}:#{password}"&lt;/p&gt;
+
+&lt;p&gt;github.repos.list.each do |repo|
+  if repo.name =~ /whatever-regex-you-want-.*/
+    begin
+      puts github.repos.delete user: username, repo: repo.name
+    rescue
+      puts $!.message
+    end
+  end
+end
+```&lt;/p&gt;
+</content>
+  </entry>
+</feed>
