@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/ianks
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ianks.com
+  * I am ianks (https://keybase.io/ianks) on keybase.
+  * I have a public key ASBHlKmXo8r7i1OF61hp5hD2ANjGtymfYB6sp9Xw7EYY1wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204794a997a3cafb8b5385eb5869e610f600d8c6b7299f601eaca7d5f0ec4618d70a",
+      "host": "keybase.io",
+      "kid": "01204794a997a3cafb8b5385eb5869e610f600d8c6b7299f601eaca7d5f0ec4618d70a",
+      "uid": "0c4acb9c1073de399c34580b19763d19",
+      "username": "ianks"
+    },
+    "merkle_root": {
+      "ctime": 1741224152,
+      "hash": "2d6513e467dd9b45198eed5b7a4a51de3b49d0bb801577e88d10ab63e76592855b9869b19ad5169df868c37da82494c22538aa90d4abb74f8b04dbd6ef4f7e49",
+      "hash_meta": "5cda22f98472431574882bcc40b950a1daf5d5b59d91cca6ae38a75dc7962561",
+      "seqno": 26603298
+    },
+    "service": {
+      "entropy": "B60wJH0/5IIwOR2pM3HMcsuB",
+      "hostname": "ianks.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.0"
+  },
+  "ctime": 1741224167,
+  "expire_in": 504576000,
+  "prev": "cf8a81f7ad793d45ecb8f36ae9921946279a91f81391d1e25cdc91d7f665f803",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgR5Spl6PK+4tThetYaeYQ9gDYxrcpn2AerKfV8OxGGNcKp3BheWxvYWTESpcCEcQgz4qB9615PUXsuPNq6ZIZRieakfgTkdHiXNyR1/Zl+APEIM252EICDlLpCU9S22Y1GrvBNJ1LULSZXfyISOeeItyjAgHCo3NpZ8RA6eHN4H2orPw0kdSNj8UqJ56hkeEbqF943xLTYwA5GkmWbQxK/NrD3i0zuA7ol2UAQuxhceZ/pawltWfsDyS9AahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIEu6MiasjtbzIe74L8n6z8odT/+O1QpJjRMfCvoZ5bNCo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ianks
+
+==================================================================
