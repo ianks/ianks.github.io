@@ -31,7 +31,7 @@ if ((document.body.classList.remove("hidden"), window.innerWidth > 768)) {
         e.classList.add("error"), (e.textContent = ":| Error loading audio");
     }
   }
-  e.addEventListener("click", () => togglePlayback("msk/salty-frog.bmp")),
+  e.addEventListener("click", () => togglePlayback("/2025/msk/salty-frog.bmp")),
     e.click(),
     document.addEventListener("DOMContentLoaded", function () {
       const e = document.createElement("style");
